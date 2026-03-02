@@ -47,6 +47,14 @@ const services = [
     mcpTools: 1,
     slug: "ai-catchcopy",
   },
+  {
+    name: "AI 面接練習",
+    description: "AIが面接官になって模擬面接を実施。質問と評価をリアルタイムで生成。",
+    accent: "amber",
+    url: "https://ai-interview.ezoai.jp",
+    mcpTools: 1,
+    slug: "ai-interview",
+  },
 ];
 
 const accentColors: Record<
@@ -88,6 +96,12 @@ const accentColors: Record<
     text: "text-emerald-400",
     bg: "hover:bg-emerald-500/10",
     badge: "bg-emerald-500/20 text-emerald-300",
+  },
+  amber: {
+    border: "border-amber-500/30",
+    text: "text-amber-400",
+    bg: "hover:bg-amber-500/10",
+    badge: "bg-amber-500/20 text-amber-300",
   },
 };
 

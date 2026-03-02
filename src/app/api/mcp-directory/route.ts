@@ -50,6 +50,12 @@ export async function GET() {
         mcp_endpoint: "https://ai-catchcopy.ezoai.jp/api/mcp",
         tools: ["generate_catchcopy"],
       },
+      {
+        name: "AI面接練習",
+        url: "https://ai-interview.ezoai.jp",
+        mcp_endpoint: "https://ai-interview.ezoai.jp/api/mcp",
+        tools: ["mock_interview"],
+      },
     ],
   });
 }
