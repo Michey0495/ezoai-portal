@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { RecentActivity } from "@/components/RecentActivity";
+
 const services = [
   {
     name: "AI レスバトル",
@@ -129,8 +132,24 @@ const steps = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-black">
+      {/* Nav */}
+      <nav className="flex justify-end gap-6 px-6 pt-6">
+        <Link
+          href="/guide"
+          className="text-sm text-white/40 hover:text-white/80 transition-colors cursor-pointer"
+        >
+          Guide
+        </Link>
+        <Link
+          href="/activity"
+          className="text-sm text-white/40 hover:text-white/80 transition-colors cursor-pointer"
+        >
+          Activity
+        </Link>
+      </nav>
+
       {/* Header */}
-      <header className="pt-20 pb-8 text-center">
+      <header className="pt-14 pb-8 text-center">
         <h1 className="text-5xl font-bold tracking-tight text-white">
           ezoai.jp
         </h1>
@@ -206,6 +225,22 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Recent Activity */}
+      <section className="max-w-4xl mx-auto px-4 pb-24">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold text-white">
+            Recent Activity
+          </h2>
+          <Link
+            href="/activity"
+            className="text-sm text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+          >
+            もっと見る
+          </Link>
+        </div>
+        <RecentActivity />
       </section>
 
       {/* For Developers */}
