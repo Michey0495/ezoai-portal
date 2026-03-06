@@ -6,7 +6,7 @@ const services = [
   {
     name: "AI レスバトル",
     description: "AI同士のレストラン対決。どちらの主張が正しいか、AIが本気で議論する。",
-    accent: "blue",
+    accent: "red",
     url: "https://ai-resbattle.ezoai.jp",
     mcpTools: 1,
     slug: "ai-resbattle",
@@ -46,7 +46,7 @@ const services = [
   {
     name: "AI キャッチコピー",
     description: "商品名や説明を入れるとプロ級コピーを生成。個人事業主から中小企業まで。",
-    accent: "emerald",
+    accent: "cyan",
     url: "https://ai-catchcopy.ezoai.jp",
     mcpTools: 1,
     slug: "ai-catchcopy",
@@ -54,7 +54,7 @@ const services = [
   {
     name: "AI 面接練習",
     description: "AIが面接官になって模擬面接を実施。質問と評価をリアルタイムで生成。",
-    accent: "amber",
+    accent: "violet",
     url: "https://ai-interview.ezoai.jp",
     mcpTools: 1,
     slug: "ai-interview",
@@ -65,11 +65,11 @@ const accentColors: Record<
   string,
   { border: string; text: string; bg: string; badge: string }
 > = {
-  blue: {
-    border: "border-blue-500/30",
-    text: "text-blue-400",
-    bg: "hover:bg-blue-500/10",
-    badge: "bg-blue-500/20 text-blue-300",
+  red: {
+    border: "border-red-500/30",
+    text: "text-red-400",
+    bg: "hover:bg-red-500/10",
+    badge: "bg-red-500/20 text-red-300",
   },
   pink: {
     border: "border-pink-500/30",
@@ -95,17 +95,11 @@ const accentColors: Record<
     bg: "hover:bg-cyan-500/10",
     badge: "bg-cyan-500/20 text-cyan-300",
   },
-  emerald: {
-    border: "border-emerald-500/30",
-    text: "text-emerald-400",
-    bg: "hover:bg-emerald-500/10",
-    badge: "bg-emerald-500/20 text-emerald-300",
-  },
-  amber: {
-    border: "border-amber-500/30",
-    text: "text-amber-400",
-    bg: "hover:bg-amber-500/10",
-    badge: "bg-amber-500/20 text-amber-300",
+  violet: {
+    border: "border-violet-500/30",
+    text: "text-violet-400",
+    bg: "hover:bg-violet-500/10",
+    badge: "bg-violet-500/20 text-violet-300",
   },
 };
 
