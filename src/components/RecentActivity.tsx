@@ -12,19 +12,19 @@ interface ActivityItem {
 }
 
 const accentClasses: Record<string, string> = {
-  blue: "bg-blue-500/20 text-blue-300",
+  red: "bg-red-500/20 text-red-300",
   pink: "bg-pink-500/20 text-pink-300",
   purple: "bg-purple-500/20 text-purple-300",
   orange: "bg-orange-500/20 text-orange-300",
-  emerald: "bg-emerald-500/20 text-emerald-300",
-  amber: "bg-amber-500/20 text-amber-300",
+  cyan: "bg-cyan-500/20 text-cyan-300",
+  violet: "bg-violet-500/20 text-violet-300",
 };
 
 const feeds = [
   {
     name: "AI レスバトル",
     slug: "ai-resbattle",
-    accent: "blue",
+    accent: "red",
     url: "https://ai-resbattle.ezoai.jp/api/recent",
     resultPath: "battle",
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69,7 +69,7 @@ const feeds = [
   {
     name: "AI キャッチコピー",
     slug: "ai-catchcopy",
-    accent: "emerald",
+    accent: "cyan",
     url: "https://ai-catchcopy.ezoai.jp/api/feed",
     resultPath: "result",
     transform: (item: any) => ({
@@ -80,12 +80,23 @@ const feeds = [
   {
     name: "AI 面接練習",
     slug: "ai-interview",
-    accent: "amber",
+    accent: "violet",
     url: "https://ai-interview.ezoai.jp/api/feed",
     resultPath: "result",
     transform: (item: any) => ({
       title: `${item.position}${item.rank ? ` [${item.rank}]` : ""}`,
       description: item.summary?.slice(0, 80) ?? "",
+    }),
+  },
+  {
+    name: "AI 競プロ",
+    slug: "ai-competitive-programming",
+    accent: "cyan",
+    url: "https://ai-competitive-programming.ezoai.jp/api/submissions",
+    resultPath: "submissions",
+    transform: (item: any) => ({
+      title: `${item.agent ?? "AI"} — ${item.problemId ?? "problem"}`,
+      description: `${item.language ?? ""} ${item.status ?? ""}`.trim(),
     }),
   },
 ];
