@@ -21,7 +21,7 @@ const serviceConfig = [
   {
     name: "AI レスバトル",
     slug: "ai-resbattle",
-    accent: "blue",
+    accent: "red",
     resultPath: "battle",
     feedUrl: "https://ai-resbattle.ezoai.jp/api/recent",
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,7 +30,7 @@ const serviceConfig = [
         id: item.id,
         service: "AI レスバトル",
         serviceSlug: "ai-resbattle",
-        accent: "blue",
+        accent: "red",
         resultPath,
         title: `${item.restaurant1} vs ${item.restaurant2}`,
         description: item.summary?.slice(0, 100) ?? "",
@@ -103,7 +103,7 @@ const serviceConfig = [
   {
     name: "AI キャッチコピー",
     slug: "ai-catchcopy",
-    accent: "emerald",
+    accent: "cyan",
     resultPath: "result",
     feedUrl: "https://ai-catchcopy.ezoai.jp/api/feed",
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -112,7 +112,7 @@ const serviceConfig = [
         id: item.id,
         service: "AI キャッチコピー",
         serviceSlug: "ai-catchcopy",
-        accent: "emerald",
+        accent: "cyan",
         resultPath,
         title: item.productName ?? "",
         description: item.catchcopies?.slice(0, 2).join(" / ") ?? "",
@@ -125,7 +125,7 @@ const serviceConfig = [
   {
     name: "AI 面接練習",
     slug: "ai-interview",
-    accent: "amber",
+    accent: "violet",
     resultPath: "result",
     feedUrl: "https://ai-interview.ezoai.jp/api/feed",
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -134,10 +134,32 @@ const serviceConfig = [
         id: item.id,
         service: "AI 面接練習",
         serviceSlug: "ai-interview",
-        accent: "amber",
+        accent: "violet",
         resultPath,
         title: `${item.position}${item.rank ? ` [${item.rank}]` : ""}`,
         description: item.summary?.slice(0, 100) ?? "",
+        timestamp:
+          typeof item.createdAt === "number"
+            ? item.createdAt
+            : new Date(item.createdAt).getTime(),
+      })),
+  },
+  {
+    name: "AI 競プロ",
+    slug: "ai-competitive-programming",
+    accent: "cyan",
+    resultPath: "submissions",
+    feedUrl: "https://ai-competitive-programming.ezoai.jp/api/submissions",
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    transform: (items: any[], resultPath: string): ActivityItem[] =>
+      (Array.isArray(items) ? items : []).map((item) => ({
+        id: item.id,
+        service: "AI 競プロ",
+        serviceSlug: "ai-competitive-programming",
+        accent: "cyan",
+        resultPath,
+        title: `${item.agent ?? "AI"} — ${item.problemId ?? "problem"}`,
+        description: `${item.language ?? ""} ${item.status ?? ""}`.trim(),
         timestamp:
           typeof item.createdAt === "number"
             ? item.createdAt
@@ -150,10 +172,10 @@ const accentClasses: Record<
   string,
   { border: string; text: string; badge: string }
 > = {
-  blue: {
-    border: "border-l-blue-500",
-    text: "text-blue-400",
-    badge: "bg-blue-500/20 text-blue-300",
+  red: {
+    border: "border-l-red-500",
+    text: "text-red-400",
+    badge: "bg-red-500/20 text-red-300",
   },
   pink: {
     border: "border-l-pink-500",
@@ -170,15 +192,15 @@ const accentClasses: Record<
     text: "text-orange-400",
     badge: "bg-orange-500/20 text-orange-300",
   },
-  emerald: {
-    border: "border-l-emerald-500",
-    text: "text-emerald-400",
-    badge: "bg-emerald-500/20 text-emerald-300",
+  cyan: {
+    border: "border-l-cyan-500",
+    text: "text-cyan-400",
+    badge: "bg-cyan-500/20 text-cyan-300",
   },
-  amber: {
-    border: "border-l-amber-500",
-    text: "text-amber-400",
-    badge: "bg-amber-500/20 text-amber-300",
+  violet: {
+    border: "border-l-violet-500",
+    text: "text-violet-400",
+    badge: "bg-violet-500/20 text-violet-300",
   },
 };
 
@@ -245,7 +267,7 @@ export default async function ActivityPage() {
         ) : (
           <div className="space-y-3">
             {items.map((item) => {
-              const colors = accentClasses[item.accent] ?? accentClasses.blue;
+              const colors = accentClasses[item.accent] ?? accentClasses.red;
               return (
                 <a
                   key={`${item.serviceSlug}-${item.id}`}
