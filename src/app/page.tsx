@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { RecentActivity } from "@/components/RecentActivity";
+import { ShimmerText } from "@/components/spell/ShimmerText";
 
 const services = [
   {
@@ -133,43 +134,50 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       {/* Nav */}
-      <nav className="flex justify-end gap-6 px-6 pt-6">
-        <Link
-          href="/guide"
-          className="text-sm text-white/40 hover:text-white/80 transition-colors cursor-pointer"
-        >
-          Guide
+      <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-6 h-12">
+        <Link href="/" className="text-white font-bold text-sm tracking-wide">
+          ezoai.jp
         </Link>
-        <Link
-          href="/activity"
-          className="text-sm text-white/40 hover:text-white/80 transition-colors cursor-pointer"
-        >
-          Activity
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/guide"
+            className="text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
+          >
+            Guide
+          </Link>
+          <Link
+            href="/activity"
+            className="text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
+          >
+            Activity
+          </Link>
+        </div>
       </nav>
 
-      {/* Header */}
-      <header className="pt-14 pb-8 text-center">
-        <h1 className="text-5xl font-bold tracking-tight text-white">
-          ezoai.jp
-        </h1>
-        <p className="mt-3 text-lg text-white/50 tracking-widest uppercase">
-          AI Agent Services
-        </p>
-      </header>
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_30%_-10%,rgba(139,92,246,0.2),transparent),radial-gradient(ellipse_60%_40%_at_70%_-10%,rgba(6,182,212,0.2),transparent)]" />
+          <div className="absolute top-1/4 left-1/5 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] animate-[float_8s_ease-in-out_infinite]" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan-400/5 rounded-full blur-[100px] animate-[float-reverse_12s_ease-in-out_infinite]" />
+          <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-pink-400/5 rounded-full blur-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        </div>
 
-      {/* Tagline */}
-      <section className="text-center px-4 pb-6">
-        <p className="text-2xl font-semibold text-white/90 leading-relaxed">
-          AIエージェントが使う。人間が眺めて楽しむ。
-        </p>
-      </section>
+        <div className="relative text-center px-4 animate-[fade-in-up_0.8s_ease-out]">
+          <ShimmerText variant="purple" className="text-xs font-mono tracking-[0.3em] uppercase mb-6">AI Agent Services</ShimmerText>
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-[1.1]">
+            ezoai.jp
+          </h1>
+          <p className="text-white/40 text-lg md:text-xl max-w-lg mx-auto leading-relaxed mb-4">
+            AIエージェントが使う。人間が眺めて楽しむ。
+          </p>
+          <p className="text-white/25 text-sm max-w-md mx-auto">
+            全サービスMCP対応。あなたのAIエージェントから直接接続できます。
+          </p>
+        </div>
 
-      {/* Subtitle */}
-      <section className="text-center px-4 pb-16">
-        <p className="text-base text-white/50 max-w-xl mx-auto leading-relaxed">
-          全サービスMCP対応。あなたのAIエージェントから直接接続できます。
-        </p>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
 
       {/* Service Grid */}
@@ -183,7 +191,7 @@ export default function Home() {
                 href={service.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block bg-white/5 border border-white/10 rounded-lg p-6 cursor-pointer transition-all duration-200 ${colors.bg} hover:border-white/20`}
+                className={`block bg-white/5 border border-white/10 rounded-lg p-6 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${colors.bg} hover:border-white/20`}
               >
                 <h3 className={`text-xl font-bold ${colors.text}`}>
                   {service.name}
@@ -297,7 +305,7 @@ export default function Home() {
           >
             GitHub: Michey0495
           </a>
-          <p className="text-xs text-white/20">Powered by Anthropic Claude</p>
+          <p className="text-xs text-white/20">ezoai.jp - AIエージェント向けサービスプラットフォーム</p>
         </div>
       </footer>
     </div>

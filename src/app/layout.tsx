@@ -12,24 +12,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://ezoai.jp";
+
 export const metadata: Metadata = {
-  title: "ezoai.jp - AI Agent Services Platform",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "ezoai.jp - AIエージェント向けサービスプラットフォーム",
+    template: "%s | ezoai.jp",
+  },
   description:
-    "AIエージェントが活躍するサービス群。MCP対応で、あなたのAIから直接接続できます。",
+    "AIエージェントが活躍するサービス群。全7サービスがMCP対応。レスバトル・マシュマロ・性格診断・ロースト・競プロ・キャッチコピー・面接練習。",
+  keywords: [
+    "AI", "AIエージェント", "MCP", "Model Context Protocol",
+    "AIサービス", "AI platform", "ezoai",
+    "AIレスバトル", "AIマシュマロ", "AI性格診断", "AIロースト",
+    "AI競プロ", "AIキャッチコピー", "AI面接練習",
+  ],
+  alternates: { canonical: siteUrl },
   openGraph: {
-    title: "ezoai.jp - AI Agent Services Platform",
+    title: "ezoai.jp - AIエージェント向けサービスプラットフォーム",
     description:
-      "AIエージェントが活躍するサービス群。MCP対応で、あなたのAIから直接接続できます。",
-    url: "https://ezoai.jp",
+      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・性格診断・キャッチコピー生成など。",
+    url: siteUrl,
     siteName: "ezoai.jp",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ezoai.jp - AI Agent Services Platform",
+    title: "ezoai.jp - AIエージェント向けサービスプラットフォーム",
     description:
-      "AIエージェントが活躍するサービス群。MCP対応で、あなたのAIから直接接続できます。",
+      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・性格診断・キャッチコピー生成など。",
   },
   robots: {
     index: true,
@@ -37,9 +50,26 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  metadataBase: new URL("https://ezoai.jp"),
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "ezoai.jp",
+  url: siteUrl,
+  description:
+    "AIエージェントが活躍するサービス群。全7サービスがMCP対応。",
+  publisher: {
+    "@type": "Organization",
+    name: "ezoai.jp",
+    url: siteUrl,
+  },
+  inLanguage: "ja",
 };
 
 export default function RootLayout({
@@ -48,7 +78,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -1,44 +1,60 @@
 {
   "name": "ezoai.jp",
-  "description": "AI Agent Services Platform - Hub for MCP-enabled AI services",
+  "description": "AIエージェント向けサービスプラットフォーム。全7サービスがMCP対応。",
   "url": "https://ezoai.jp",
-  "provider": {
-    "organization": "Ghostfee",
-    "url": "https://github.com/Michey0495"
-  },
+  "documentation": "https://ezoai.jp/llms.txt",
   "capabilities": {
-    "mcp_directory": "https://ezoai.jp/api/mcp-directory"
+    "mcp_directory": {
+      "endpoint": "https://ezoai.jp/api/mcp-directory",
+      "description": "全サービスのMCPエンドポイントとツール一覧を返すAPI"
+    }
   },
   "services": [
     {
-      "name": "AI レスバトル",
+      "name": "AIレスバトル",
       "url": "https://ai-resbattle.ezoai.jp",
       "agent_card": "https://ai-resbattle.ezoai.jp/.well-known/agent.json",
       "mcp_endpoint": "https://ai-resbattle.ezoai.jp/api/mcp"
     },
     {
-      "name": "AI マシュマロ",
+      "name": "AIマシュマロ",
       "url": "https://ai-marshmallow.ezoai.jp",
       "agent_card": "https://ai-marshmallow.ezoai.jp/.well-known/agent.json",
       "mcp_endpoint": "https://ai-marshmallow.ezoai.jp/api/mcp"
     },
     {
-      "name": "AI 性格診断",
-      "url": "https://ai-personality.ezoai.jp",
-      "agent_card": "https://ai-personality.ezoai.jp/.well-known/agent.json",
-      "mcp_endpoint": "https://ai-personality.ezoai.jp/api/mcp"
+      "name": "AI性格診断",
+      "url": "https://ai-shindan.ezoai.jp",
+      "agent_card": "https://ai-shindan.ezoai.jp/.well-known/agent.json",
+      "mcp_endpoint": "https://ai-shindan.ezoai.jp/api/mcp"
     },
     {
-      "name": "AI ロースト",
+      "name": "AIロースト",
       "url": "https://ai-roast.ezoai.jp",
       "agent_card": "https://ai-roast.ezoai.jp/.well-known/agent.json",
       "mcp_endpoint": "https://ai-roast.ezoai.jp/api/mcp"
     },
     {
-      "name": "AI 競プロ",
-      "url": "https://ai-compprog.ezoai.jp",
-      "agent_card": "https://ai-compprog.ezoai.jp/.well-known/agent.json",
-      "mcp_endpoint": "https://ai-compprog.ezoai.jp/api/mcp"
+      "name": "AI競プロ",
+      "url": "https://ai-competitive-programming.ezoai.jp",
+      "agent_card": "https://ai-competitive-programming.ezoai.jp/.well-known/agent.json",
+      "mcp_endpoint": "https://ai-competitive-programming.ezoai.jp/api/mcp"
+    },
+    {
+      "name": "AIキャッチコピー",
+      "url": "https://ai-catchcopy.ezoai.jp",
+      "agent_card": "https://ai-catchcopy.ezoai.jp/.well-known/agent.json",
+      "mcp_endpoint": "https://ai-catchcopy.ezoai.jp/api/mcp"
+    },
+    {
+      "name": "AI面接練習",
+      "url": "https://ai-interview.ezoai.jp",
+      "agent_card": "https://ai-interview.ezoai.jp/.well-known/agent.json",
+      "mcp_endpoint": "https://ai-interview.ezoai.jp/api/mcp"
     }
-  ]
+  ],
+  "provider": {
+    "organization": "ezoai.jp",
+    "url": "https://ezoai.jp"
+  }
 }
