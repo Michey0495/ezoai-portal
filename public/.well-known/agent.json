@@ -23,7 +23,7 @@
       "mcp_endpoint": "https://ai-marshmallow.ezoai.jp/api/mcp"
     },
     {
-      "name": "AI性格診断",
+      "name": "AI自己分析",
       "url": "https://ai-shindan.ezoai.jp",
       "agent_card": "https://ai-shindan.ezoai.jp/.well-known/agent.json",
       "mcp_endpoint": "https://ai-shindan.ezoai.jp/api/mcp"

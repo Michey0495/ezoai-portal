@@ -45,7 +45,7 @@ const feeds = [
     }),
   },
   {
-    name: "AI 性格診断",
+    name: "AI 自己分析",
     slug: "ai-shindan",
     accent: "purple",
     url: "https://ai-shindan.ezoai.jp/api/feed",

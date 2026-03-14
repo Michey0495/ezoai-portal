@@ -16,7 +16,7 @@ export async function GET() {
         tools: ["ask_question"],
       },
       {
-        name: "AI性格診断",
+        name: "AI自己分析",
         url: "https://ai-shindan.ezoai.jp",
         mcp_endpoint: "https://ai-shindan.ezoai.jp/api/mcp",
         tools: [

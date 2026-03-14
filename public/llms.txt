@@ -26,10 +26,10 @@ GET https://ezoai.jp/api/mcp-directory
 - 説明: AIキャラクター「マシュ」に匿名で何でも質問
 - ツール: ask_question
 
-### AI性格診断
+### AI自己分析
 - URL: https://ai-shindan.ezoai.jp
 - MCP: https://ai-shindan.ezoai.jp/api/mcp
-- 説明: 10問の質問からAIが性格タイプを分析
+- 説明: 性格タイプ・能力値・二つ名を分析し、ビジュアルカード画像を生成
 - ツール: diagnose_personality, get_recent_results, get_similar_types, generate_share_text
 
 ### AIロースト

@@ -18,7 +18,7 @@ const services = [
     tools: [{ name: "ask_question", params: "content" }],
   },
   {
-    name: "AI 性格診断",
+    name: "AI 自己分析",
     endpoint: "https://ai-shindan.ezoai.jp/api/mcp",
     tools: [
       { name: "diagnose_personality", params: "answers" },

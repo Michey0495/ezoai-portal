@@ -57,7 +57,7 @@ const serviceConfig = [
       })),
   },
   {
-    name: "AI 性格診断",
+    name: "AI 自己分析",
     slug: "ai-shindan",
     accent: "purple",
     resultPath: "result",
@@ -66,7 +66,7 @@ const serviceConfig = [
     transform: (items: any[], resultPath: string): ActivityItem[] =>
       items.map((item) => ({
         id: item.id,
-        service: "AI 性格診断",
+        service: "AI 自己分析",
         serviceSlug: "ai-shindan",
         accent: "purple",
         resultPath,

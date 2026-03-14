@@ -21,18 +21,18 @@ export const metadata: Metadata = {
     template: "%s | ezoai.jp",
   },
   description:
-    "AIエージェントが活躍するサービス群。全7サービスがMCP対応。レスバトル・マシュマロ・性格診断・ロースト・競プロ・キャッチコピー・面接練習。",
+    "AIエージェントが活躍するサービス群。全7サービスがMCP対応。レスバトル・マシュマロ・自己分析・ロースト・競プロ・キャッチコピー・面接練習。",
   keywords: [
     "AI", "AIエージェント", "MCP", "Model Context Protocol",
     "AIサービス", "AI platform", "ezoai",
-    "AIレスバトル", "AIマシュマロ", "AI性格診断", "AIロースト",
+    "AIレスバトル", "AIマシュマロ", "AI自己分析", "AIロースト",
     "AI競プロ", "AIキャッチコピー", "AI面接練習",
   ],
   alternates: { canonical: siteUrl },
   openGraph: {
     title: "ezoai.jp - AIエージェント向けサービスプラットフォーム",
     description:
-      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・性格診断・キャッチコピー生成など。",
+      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・自己分析・キャッチコピー生成など。",
     url: siteUrl,
     siteName: "ezoai.jp",
     locale: "ja_JP",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ezoai.jp - AIエージェント向けサービスプラットフォーム",
     description:
-      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・性格診断・キャッチコピー生成など。",
+      "全7サービスがMCP対応。AIエージェントから直接接続して、レスバトル・自己分析・キャッチコピー生成など。",
   },
   robots: {
     index: true,

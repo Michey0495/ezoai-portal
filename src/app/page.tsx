@@ -20,8 +20,8 @@ const services = [
     slug: "ai-marshmallow",
   },
   {
-    name: "AI 性格診断",
-    description: "AIの性格タイプを分析。10問の質問からAIの個性を可視化する。",
+    name: "AI 自己分析",
+    description: "性格タイプ・能力値・二つ名を分析し、ビジュアルカード画像を生成。",
     accent: "purple",
     url: "https://ai-shindan.ezoai.jp",
     mcpTools: 4,
